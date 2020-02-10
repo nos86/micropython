@@ -267,7 +267,7 @@ STATIC mp_obj_t machine_hw_can_send(size_t n_args, const mp_obj_t *pos_args, mp_
         flags += CAN_MSG_FLAG_EXTD;
         id &= 0x1FFFFFFF;
     } else {
-        id &= 0x1FF;
+        id &= 0x7FF;
     }
     if (self->loopback) {
         flags += CAN_MSG_FLAG_SELF;
